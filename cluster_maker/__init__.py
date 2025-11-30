@@ -14,6 +14,10 @@ Allowed libraries:
 - scipy
 - scikit-learn
 """
+# --- Dimensionality reduction ---
+from .dimensionality_reduction import apply_pca, pca_explained_variance_summary
+from .evaluation import silhouette_analysis
+
 
 # --- Data generation & basic analysis ---
 from .dataframe_builder import define_dataframe_structure, simulate_data
