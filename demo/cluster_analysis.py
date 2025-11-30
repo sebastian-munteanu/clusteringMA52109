@@ -19,13 +19,13 @@ def main(args: list[str]) -> None:
     print("=== cluster_maker demo: clustering analysis ===\n")
 
     # Require exactly one argument: the CSV file path
-    if len(args) != 2:
+    if len(args) != 1:
         print("ERROR: Incorrect number of arguments provided.")
         print("Usage: python demo/demo_cluster_analysis.py [input_csv_file]")
         sys.exit(1)
 
     # Input CSV file
-    input_path = args[0]
+    input_path = "../data/demo_data.csv"
     print(f"Input CSV file: {input_path}")
 
     # Check file exists
@@ -46,7 +46,7 @@ def main(args: list[str]) -> None:
         if pd.api.types.is_numeric_dtype(df[col])
     ]
 
-    if len(numeric_cols) < 5:
+    if len(numeric_cols) < 2:
         print("\nERROR: Not enough numeric columns for 2D clustering.")
         print(f"Numeric columns found: {numeric_cols}")
         sys.exit(1)
