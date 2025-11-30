@@ -37,7 +37,7 @@ def select_features(data: pd.DataFrame, feature_cols: List[str]) -> pd.DataFrame
     """
     missing = [col for col in feature_cols if col not in data.columns]
     if missing:
-        raise KeyError(f"The following feature columns are missing: {missing}")
+        raise ValueError(f"The following feature columns are missing: {missing}")
 
     X_df = data[feature_cols].copy()
 
